@@ -9,4 +9,47 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');
 ## Never change password
 ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
 
+# Surf mysql
+show databases;
+use XXX;
+show tables;
+
+# DDL - data definition language
+CREATE, ALTER, DROP
+create database mydb;
+drop database mydb;
+
+# DML - data manipulation language
+SECLECT, INSERT, UPDATE, DELETE
+
+# Table working
+## Create table
+create table trains (train_num integer, train_name char(20), from_stn char(10), to_stn char(10), nocoaches integer);
+create table mytable (pnrnumber integer primary key, trainnumber integer not null, doj date, npsgr integer);
+
+## Describe table
+desc trains;
+
+## Drop table
+drop table mytab1;
+
+## Read table
+select * from trains;
+
+## Add column into table
+alter table mytable add column tostn varchar(20);
+
+# Modify column attribute from table
+alter table mytable modify column fromstn varchar(30);
+
+## Drop column from table 
+alter table mytable drop column phonenumber;
+
+## Write row into table
+insert into trains values (101, "howrah exp", "chennai", "hovrah", 25);
+
+# Permission for someone
+grant privileges on database.object to 'username'@'hostname' identified by 'password';
+grant all on test.* to 'tool830'@'localhost' identified by 'passwor';
+
 
