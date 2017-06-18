@@ -1,6 +1,7 @@
 
 # Setup
 ## Login as root
+/usr/local/mysql/bin
 ./mysql -u root -p
 
 ## Change Password
@@ -47,6 +48,9 @@ alter table mytable drop column phonenumber;
 
 ## Write row into table
 insert into trains values (101, "howrah exp", "chennai", "hovrah", 25);
+
+## Drop row from table
+alter table mytable drop 101;
 
 # Permission for someone
 grant privileges on database.object to 'username'@'hostname' identified by 'password';
